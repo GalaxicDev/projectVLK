@@ -107,6 +107,7 @@ export default function ContactSection() {
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all text-white placeholder:text-zinc-600"
                                         placeholder="Uw naam"
+                                        suppressHydrationWarning
                                     />
                                 </div>
                                 <div>
