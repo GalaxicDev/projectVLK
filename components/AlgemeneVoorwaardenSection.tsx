@@ -37,8 +37,6 @@ export default function AlgemeneVoorwaardenSection() {
 
     return (
         <section id="voorwaarden" className="py-32 px-6 bg-black relative">
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
-
             <div className="max-w-4xl mx-auto" ref={ref}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

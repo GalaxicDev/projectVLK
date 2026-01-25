@@ -19,7 +19,7 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="contact" className="py-32 px-6 bg-zinc-950 relative overflow-hidden">
+        <section id="contact" className="py-32 px-6 relative overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0">
                 <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-violet-600/5 rounded-full blur-[150px]" />
@@ -135,6 +135,7 @@ export default function ContactSection() {
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all text-white placeholder:text-zinc-600"
                                     placeholder="uw@email.nl"
+                                    suppressHydrationWarning
                                 />
                             </div>
 

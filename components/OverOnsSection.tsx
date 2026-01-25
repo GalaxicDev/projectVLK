@@ -50,18 +50,20 @@ export default function OverOnsSection() {
     ];
 
     return (
-        <section id="over-ons" className="py-32 px-6 bg-zinc-950 relative overflow-hidden">
+        <section id="over-ons" className="py-32 px-6 relative overflow-hidden">
             {/* Background elements */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/10 via-transparent to-transparent" />
+            <div
+                className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent"/>
+            <div
+                className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/10 via-transparent to-transparent"/>
 
             <div className="max-w-7xl mx-auto relative" ref={ref}>
                 {/* Header */}
                 <div className="grid lg:grid-cols-2 gap-16 mb-20">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.8 }}
+                        initial={{opacity: 0, x: -30}}
+                        animate={isInView ? {opacity: 1, x: 0} : {}}
+                        transition={{duration: 0.8}}
                     >
                         <p className="text-violet-400 text-sm font-medium uppercase tracking-widest mb-4">
                             Over Ons
@@ -74,9 +76,9 @@ export default function OverOnsSection() {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        initial={{opacity: 0, x: 30}}
+                        animate={isInView ? {opacity: 1, x: 0} : {}}
+                        transition={{duration: 0.8, delay: 0.2}}
                         className="flex items-end"
                     >
                         <p className="text-lg text-zinc-400 leading-relaxed">
@@ -93,16 +95,18 @@ export default function OverOnsSection() {
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                            initial={{opacity: 0, y: 30}}
+                            animate={isInView ? {opacity: 1, y: 0} : {}}
+                            transition={{duration: 0.6, delay: 0.3 + index * 0.1}}
                             className="group relative p-8 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-violet-500/30 transition-all duration-500"
                         >
                             {/* Hover glow */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500" />
+                            <div
+                                className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500"/>
 
                             <div className="relative">
-                                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 mb-6 group-hover:bg-violet-500/20 transition-colors">
+                                <div
+                                    className="w-14 h-14 flex items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 mb-6 group-hover:bg-violet-500/20 transition-colors">
                                     {service.icon}
                                 </div>
                                 <h3 className="text-xl font-semibold mb-3 group-hover:text-violet-400 transition-colors">
@@ -118,9 +122,9 @@ export default function OverOnsSection() {
 
                 {/* Bottom CTA */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, delay: 0.8 }}
+                    initial={{opacity: 0, y: 30}}
+                    animate={isInView ? {opacity: 1, y: 0} : {}}
+                    transition={{duration: 0.8, delay: 0.8}}
                     className="mt-16 text-center"
                 >
                     <a
@@ -129,7 +133,8 @@ export default function OverOnsSection() {
                     >
                         Bekijk onze projecten
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                  d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                         </svg>
                     </a>
                 </motion.div>
