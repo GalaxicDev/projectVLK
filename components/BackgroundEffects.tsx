@@ -30,7 +30,7 @@ export default function BackgroundEffects() {
                     {[...Array(8)].map((_, i) => (
                         <motion.div
                             key={i}
-                            className="absolute top-0 w-[2px] bg-gradient-to-b from-violet-500/30 via-violet-500/15 to-transparent"
+                            className="absolute top-0 w-[10px] bg-gradient-to-b from-violet-500/30 via-violet-500/15 to-transparent"
                             style={{
                                 left: `${10 + i * 12}%`,
                                 height: '100%',
