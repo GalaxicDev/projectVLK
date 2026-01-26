@@ -36,7 +36,7 @@ export default function AlgemeneVoorwaardenSection() {
         },];
 
     return (
-        <section id="voorwaarden" className="py-32 px-6 bg-black relative">
+        <section id="voorwaarden" className="py-32 px-6 relative">
             <div className="max-w-4xl mx-auto" ref={ref}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

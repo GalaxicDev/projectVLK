@@ -24,22 +24,32 @@ export default function BackgroundEffects() {
     return (
         <>
             {/* Static background elements - behind content */}
-            <div className="fixed inset-0 pointer-events-none z-0">
-                {/* DMX beams */}
-                {[...Array(8)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className="absolute h-[200vh] w-[2px] bg-gradient-to-b from-transparent via-violet-500/20 to-transparent"
-                        style={{ left: `${10 + i * 12}%`, transformOrigin: "top center" }}
-                        animate={{ rotate: [15, -15, 15], opacity: [0.2, 0.5, 0.2] }}
-                        transition={{
-                            duration: 4 + i * 0.5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: i * 0.3,
-                        }}
-                    />
-                ))}
+            <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+                {/* DMX beams - now absolute to body, not viewport */}
+                <div className="absolute inset-0 w-full" style={{ height: '100%', minHeight: '100vh' }}>
+                    {[...Array(8)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute top-0 w-[2px] bg-gradient-to-b from-violet-500/30 via-violet-500/15 to-transparent"
+                            style={{
+                                left: `${10 + i * 12}%`,
+                                height: '100%',
+                                transformOrigin: "top center",
+                            }}
+                            animate={{
+                                rotate: [8, -8, 8],
+                                opacity: [0.3, 0.6, 0.3],
+                                scaleY: [1, 1.05, 1]
+                            }}
+                            transition={{
+                                duration: 4 + i * 0.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: i * 0.3,
+                            }}
+                        />
+                    ))}
+                </div>
 
                 {/* Ambient glow orbs */}
                 <motion.div
@@ -53,7 +63,7 @@ export default function BackgroundEffects() {
                     transition={{ duration: 6, repeat: Infinity }}
                 />
                 <motion.div
-                    className="absolute top-[120%] left-1/3 w-72 h-72 bg-violet-600/10 rounded-full blur-[100px]"
+                    className="absolute bottom-[20%] left-1/3 w-72 h-72 bg-violet-600/10 rounded-full blur-[100px]"
                     animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.35, 0.2] }}
                     transition={{ duration: 7, repeat: Infinity }}
                 />
@@ -78,7 +88,7 @@ export default function BackgroundEffects() {
 
             {/* Cursor spotlight - above content */}
             <motion.div
-                className="fixed w-[650px] h-[650px] rounded-full pointer-events-none z-50"
+                className="fixed w-[650px] h-[650px] rounded-full pointer-events-none z-50 mix-blend-screen"
                 style={{
                     x: smoothX,
                     y: smoothY,
